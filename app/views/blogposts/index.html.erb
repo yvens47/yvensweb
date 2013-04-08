@@ -1,0 +1,25 @@
+<div class="span7 pull-left">
+
+<h1>Listing blogposts</h1>
+
+<% @blogposts.each do |blogpost|  %>
+
+
+<div class="status">
+	   <h2><%= blogpost.title %></h2>
+
+	   <p>    <%= truncate(blogpost.body, :length =>150) %></p>
+<div class="meta">
+	    <%= link_to time_ago_in_words( blogpost.created_at )+ " ago", blogpost %>
+	    <span class="admin"><%= link_to 'Edit', edit_blogpost_path(blogpost) %></span>
+	    <span class="admin"><%= link_to 'Destroy', blogpost, confirm: 'Are you sure?', method: :delete %></span>
+</div>
+  </div>
+<% end %>
+
+
+<br />
+<hr/>
+
+<%= link_to 'New Blogpost', new_blogpost_path, :class=>"btn btn-success" %>
+</div>
