@@ -1,5 +1,12 @@
 Web::Application.routes.draw do
 
+ 
+
+  devise_for :admins
+
+gem 'simple_form'
+  devise_for :users
+
   resources :blogposts
 
   get "home/index"

@@ -7,6 +7,9 @@ gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 gem "will_paginate"
+gem 'omniauth-facebook'
+gem 'devise'
+gem "simple_form"
 
 
 # Gems used only for assets and not required

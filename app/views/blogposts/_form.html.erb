@@ -1,4 +1,4 @@
-<%= form_for(@blogpost) do |f| %>
+<%= simple_form_for(@blogpost, :html => {:class => 'form-horizontal' }) do |f| %>
   <% if @blogpost.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blogpost.errors.count, "error") %> prohibited this blogpost from being saved:</h2>
@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.input :title, label: "Title"%><br />
+    
   </div>
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.select :category ,["family","relastionship"] %>
+    
+    <%= f.input :category, collection: ["family", "relationship","how-to","Joke"] ,prompt: "Select your age"  %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+   
+    <%= f.input :body, label:"Content" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>
